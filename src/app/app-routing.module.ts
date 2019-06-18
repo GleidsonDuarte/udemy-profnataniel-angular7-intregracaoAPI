@@ -11,6 +11,10 @@ const routes: Routes = [
   	loadChildren: './usuario/usuario.module#UsuarioModule'
   },
   {
+  	path: 'estados',
+  	loadChildren: './estados/estados.module#EstadosModule'
+  },
+  {
   	path: '',
   	pathMatch: 'full',
   	redirectTo: '/home'

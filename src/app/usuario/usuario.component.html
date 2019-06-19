@@ -1,36 +1,15 @@
-<p>
-	usuario works!
-</p>
-<div>
-	Nome do usuário:
-</div>
-<div>
-	{{ usuario.nome }}
-</div>
-<div>
-	<table border="1">
-		<thead>
-			<tr>
-				<th>
-					Nome
-				</th>
-				<th>
-					E-mail
-				</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr *ngFor="let user of usuarios">
-				<td>
-					{{ user.nome }}
-				</td>
-				<td>
-					{{ user.email }}
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-<button routerLink="add">
-	Add
-</button>
+<p-table [value]="usuarios">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Nome</th>
+            <th>email</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-usuario>
+        <tr>
+            <td>{{usuario.nome}}</td>
+            <td>{{usuario.email}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+<button pButton type="button" routerLink="add" label="Add"></button>
